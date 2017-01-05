@@ -70,11 +70,14 @@ export default class MyCircle extends Component {
       coord.n[0] = coord.n[0] + coord.n[2] ;
       coord.n[1] = coord.n[1] + coord.n[3] ;
 
-      circle.to({
-        x: coord.n[0],
-        y: coord.n[1],
-        duration: period
-      });
+      // circle.to({
+      //   x: coord.n[0],
+      //   y: coord.n[1],
+      //   duration: period
+      // });
+
+      circle.setX(coord.n[0]);
+      circle.setY(coord.n[1]);
       this.setState({
         x: coord.n[0],
         y: coord.n[1],
