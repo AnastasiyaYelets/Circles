@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {Layer, Rect, Stage, Group, Circle} from 'react-konva';
 const period = 0.00000001;
 const getRandom = (min, max) => (Math.floor(Math.random() * (max - min + 1)) + min);
-const radius =30;
+const radius =20;
 export default class MyCircle extends Component {
   constructor(...args) {
     super(...args);
@@ -15,20 +15,28 @@ export default class MyCircle extends Component {
       VelocityY: getRandom(2,3),
       isRunningCircle: this.props.isRunning
     };
+
   };
 
   componentDidMount() {
     const circle = this.refs.circle;
-    circle.x(this.state.x)
-    circle.y(this.state.y)
+
+    console.log('djhasvcvh');
+
+
+    // circle.x(this.state.x)
+    // circle.y(this.state.y)
     this.setState({
       ...this.state,
       anim: new Konva.Animation((frame) => {
         this.move(this.props.innerKey);
       }, this.props.layer)
     });
+
+
   }
   componentWillReceiveProps(nextProps) {
+
     // console.log('received');
     if (this.props.isRunning !== nextProps.isRunning) {
       this.toggleAnimation(nextProps.isRunning);
@@ -94,6 +102,7 @@ export default class MyCircle extends Component {
       this.toggleAnimationCircle(this.state.isRunningCircle);
     }
     render() {
+
       return (
         <Circle
           ref="circle"

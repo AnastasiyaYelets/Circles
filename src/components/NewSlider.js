@@ -10,7 +10,7 @@ export default class NewSlider extends Component {
           value={this.props.value}
           orientation="horizontal"
           min={1}
-          max={10}
+          max={20}
           step={1}
         />
         <div>Value: {this.props.value}</div>
