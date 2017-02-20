@@ -33,6 +33,8 @@ export default class App extends Component {
         <button onClick={this.handleToggleAnimation}>{buttonText}</button>
         <NewSlider handleChange={this.handleChange} value={this.state.value}/>
         <NewCircles value={this.state.value} isRunning={this.state.isRunning}/>
+               
+        <h3>Try to catch circle and stop it!</h3>
       </div>
     )
   };
